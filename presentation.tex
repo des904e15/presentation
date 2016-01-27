@@ -5,7 +5,7 @@
 %    rotationcw,          % change the rotation direction from counter-clockwise to clockwise
 %    shownavsym          % show the navigation symbols
   ]{AAUsimple}
-  
+
 % If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
 % Change the bar and sidebar colors:
 %\setbeamercolor{AAUsimple}{fg=red!20,bg=red}
@@ -21,9 +21,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
+
 \usepackage{pgf}
 \usepackage{tikz}
+\usepackage{marvosym}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
 \usetikzlibrary{arrows,automata}
+
+\usepackage{graphicx}
+\graphicspath{{/graphics/}}
+\usepackage{tikzscale}
+
+
 % Or whatever. Note that the encoding and the font should match. If T1
 % does not look nice, try deleting the line with the fontenc.
 \usepackage{helvet}
@@ -61,11 +72,11 @@
   Department of Computer Science\\
   Aalborg University\\
   Denmark
-  
+
   %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
 }
 
-% specify a logo on the titlepage (you can specify additional logos an include them in 
+% specify a logo on the titlepage (you can specify additional logos an include them in
 % institute command below
 \pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/aau_logo_new} % placed on the title page
 %\pgfdeclareimage[height=1.5cm]{titlepagelogo2}{AAUgraphics/aau_logo_new} % placed on the title page
@@ -83,6 +94,8 @@
 %%%%%%%%%%%%%%%%
 
 % CONTENT
+
+\input{slides/attacktrees}
 
 % the final page
 {\aauwavesbg
