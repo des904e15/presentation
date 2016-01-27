@@ -1,0 +1,9 @@
+digraph G {
+	root[label="Attack consumer", shape=AND];
+
+	gainaccess[label="Gain access"];
+	investigate[label="Investigate"];
+	attack[label="Attack Consumer"]
+
+	root -> gainaccess,investigate,attack;
+	}

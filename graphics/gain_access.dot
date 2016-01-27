@@ -1,0 +1,50 @@
+digraph G {
+
+ graph[ center=true, margin=0.2, nodesep=0.1, ranksep=0.3]
+ node[ shape=rectangle]
+
+root[label="Gain access"];
+
+
+
+
+root -> compromiseSM;
+root -> compromiseClient;
+root -> MonitorConsumption;
+
+MonitorConsumption[shape=AND, label="Monitor consumption with ECM"];
+GainAccessToPowerCables[label="Gain access to power cables \noutside the household"]
+MonitorConsumption -> GainAccessToPowerCables;
+InstallECM[label="Install ECM"];
+MonitorConsumption -> InstallECM
+
+compromiseClient[label="Compromise client",shape=OR];
+gainRemoteAccessToClient[label="Use \nmalware"];
+stealClient[label="Steal client"];
+compromiseClient -> stealClient;
+
+compromiseClient -> gainRemoteAccessToClient;
+
+
+compromiseSM[label="Compromise SM"];
+obtainPassword[label="Obtain SM password", shape=OR];
+compromiseSM[shape=OR];
+bribe[label="Bribe SM-manufacturer"];
+compromiseSM ->bribe;
+compromiseSM -> obtainPassword;
+obtainPassword -> phishing;
+obtainPassword -> malware;
+shoulderSurfing[label="Shoulder surfing"];
+obtainPassword -> shoulderSurfing;
+crackPassword[label="Crack password"];
+obtainPassword -> crackPassword;
+
+exploitVulnerability[shape=AND];
+exploitVulnerability[label="Vulnerabilities"];
+compromiseSM -> exploitVulnerability;
+findVuln[label="Find Vulnerability"];
+exploitVuln[label="Exploit Vulnerability"];
+exploitVulnerability -> findVuln;
+exploitVulnerability -> exploitVuln;
+
+}
