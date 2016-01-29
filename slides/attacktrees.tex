@@ -45,14 +45,14 @@
 \draw[dashed] (-3.5,1) -- (-2.5,1) -- (-2.5,1.5) -- (-0.5,1.5);
 \draw[dashed] (-2.5,3) -- (-2.5,2.25) -- (-4,2.25) -- (-4,1.5);
 
-\draw<1,2>[ultra thick, red, -{Stealth[scale=1.2]}, bend right=90] (power) to[out=-10,in=190] (consumer);
-\draw<1,2>[ultra thick, red, -{Stealth[scale=1.2]}, bend right] (consumer) to[out=-10,in=190] (power);
+\draw[ultra thick, red, -{Stealth[scale=1.2]}, bend right=90] (power) to[out=-10,in=190] (consumer);
+\draw[ultra thick, red, -{Stealth[scale=1.2]}, bend right] (consumer) to[out=-10,in=190] (power);
 
-\draw<1,3>[ultra thick, red, -{Stealth[scale=1.2]}] (neighbor) -- (consumer);
-\draw<1,3>[ultra thick, red, -{Stealth[scale=1.2]}] (partner) -- (consumer);
-\draw<1,3>[ultra thick, red, -{Stealth[scale=1.2]}] (burglar) -- (consumer);
+\draw[ultra thick, red, -{Stealth[scale=1.2]}] (neighbor) -- (consumer);
+\draw[ultra thick, red, -{Stealth[scale=1.2]}] (partner) -- (consumer);
+\draw[ultra thick, red, -{Stealth[scale=1.2]}] (burglar) -- (consumer);
 
-\draw<1,4>[ultra thick, red, -{Stealth[scale=1.2]}] (external) -- (consumer);
+\draw[ultra thick, red, -{Stealth[scale=1.2]}] (external) -- (consumer);
 
 
 \end{tikzpicture}
@@ -112,12 +112,12 @@
 \end{frame}
 
 
-\begin{frame}{Consumer $\iff$ Electrical Company}
+\begin{frame}{Consumer $\implies$ Electrical Company}
 \includegraphics[width=1.1\textwidth]{graphics/consumer.pdf}
 
 \end{frame}
 
-\begin{frame}{Consumer $\iff$ Electrical Company}
+\begin{frame}{Consumer $\impliedby$ Electrical Company}
 \includegraphics[width=\textwidth]{graphics/electrical_company_vs_consumer.pdf}
 
 \end{frame}
@@ -168,11 +168,11 @@
 \draw[dashed] (-2.5,3) -- (-2.5,2.25) -- (-4,2.25) -- (-4,1.5);
 
 
-\draw[ultra thick, red, -{Stealth[scale=1.2]}] (neighbor) -- (consumer);
-\draw[ultra thick, red, -{Stealth[scale=1.2]}] (partner) -- (consumer);
-\draw[ultra thick, red, -{Stealth[scale=1.2]}] (burglar) -- (consumer);
+\draw<1>[ultra thick, red, -{Stealth[scale=1.2]}] (neighbor) -- (consumer);
+\draw<1>[ultra thick, red, -{Stealth[scale=1.2]}] (partner) -- (consumer);
+\draw<1>[ultra thick, red, -{Stealth[scale=1.2]}] (burglar) -- (consumer);
 
-\draw[ultra thick, red, -{Stealth[scale=1.2]}] (external) -- (consumer);
+\draw<2>[ultra thick, red, -{Stealth[scale=1.2]}] (external) -- (consumer);
 
 
 \end{tikzpicture}
@@ -189,72 +189,34 @@
   \begin{block}{Accessing smart meter}
     \begin{itemize}
       \item Compromise Smart Meter
-      \begin{itemize}
-        \item Obtain password
-        \item Bribe Smart Meter manufacturer
-        \item Exploit vulnerabilities
-      \end{itemize}
       \item Compromise Client
-      \begin{itemize}
-        \item Malware
-        \item Steal Client
-        \item Extract data
-      \end{itemize}
       \item Install ECM
     \end{itemize}
   \end{block}
-\end{frame}
 
-\begin{frame}{Gain access}
   \begin{block}{Obtaining data }
     \begin{itemize}
-      \item Buy power consumption date
-      \begin{itemize}
-        \item From 3rd party
-        \item From the consumer
-      \end{itemize}
+      \item Buy power consumption data
       \item Obtain power consumption data
-      \begin{itemize}
-        \item Through client app
-        \item Through appliance
-      \end{itemize}
     \end{itemize}
   \end{block}
 \end{frame}
 
 \begin{frame}{Investigate}
-  \begin{block} {When is the consumer home?}
-      \begin{itemize}
-        \item Look through windows
-        \item Use neighborhood signals
-        \item Observe physical area
-        \item Device status
-        \item Device schedule
+
+\begin{tabular}{l l}
+
+  \includegraphics[width=0.4\textwidth]{graphics/hus.jpg}
+&
+\includegraphics[width=0.4\textwidth]{graphics/smartmeterdata.png}
+\end{tabular}
+
+     \begin{itemize}
+        \item When is the consumer home?
+        \item What is the consumer doing?
+        \item What does the consumer own?
+        \item What behavioural patterns do the consumer practice?
       \end{itemize}
-  \end{block}
-
-  \begin{block}{What is the consumer doing?}
-    \begin{itemize}
-      \item Device status
-      \item Turn devices on/off
-    \end{itemize}
-\end{block}
-\end{frame}
-
-\begin{frame}{Investigate}
-    \begin{block}{What does the consumer own?}
-    \begin{itemize}
-      \item Device signatures
-      \item Connected devices
-    \end{itemize}
-  \end{block}
-
-  \begin{block}{What behavioural patterns do the consumer practice?}
-    \begin{itemize}
-      \item Power consumption analysis
-      \item Device schedule
-    \end{itemize}
-  \end{block}
 \end{frame}
 
 \begin{frame}{Attack Consumer}
@@ -271,10 +233,7 @@
         \item Change device schedules
       \end{itemize}
     \end{block}
-\end{frame}
 
-
-\begin{frame}{Attack Consumer}
   \begin{block}{Indirect attacks}
     \begin{itemize}
       \item Create consumer profile
@@ -291,65 +250,4 @@
     \item Attacks on security protocols
     \item Data manipulation
   \end{itemize}
-\end{frame}
-
-\begin{frame}{Privacy}
-  \begin{block}{Getting information}
-    \begin{itemize}
-      \item Power consumption
-      \item Analyze Device signatures
-    \end{itemize}
-  \end{block}
-
-  \includegraphics[width=0.7\textwidth]{graphics/detailed.png}
-\end{frame}
-
-\begin{frame}{Privacy}
-  \begin{block}{Analyzing the information}
-    \begin{itemize}
-      \item Possible goods
-      \item What is being used?
-      \item Is consumer home?
-      \item Owned appliance brands
-    \end{itemize}
-\end{block}
-
-\end{frame}
-
-\begin{frame}{Protocol}
-\begin{block}{Issues}
-  \begin{itemize}
-    \item Vulnerabilities in any communication protocol compromises security
-    \item Chosen protocols need to fit both hardware and security requirements
-  \end{itemize}
-\end{block}
-
-\begin{block}{Security Requirements}
-  \begin{itemize}
-    \item Encryption
-    \item Authentication
-    \item Privacy
-  \end{itemize}
-\end{block}
-
-\end{frame}
-
-
-\begin{frame}{Data Manipulation}
-  \begin{block}{Multiple Data Representations}
-  \begin{itemize}
-    \item Data stored on the smart meter
-    \begin{itemize}
-      \item Firmware
-    \end{itemize}
-    \item Data sent from the smart meter
-    \begin{itemize}
-      \item DPA
-    \end{itemize}
-    \item Data shown in app
-    \begin{itemize}
-      \item Forged apps
-    \end{itemize}
-  \end{itemize}
-\end{block}
 \end{frame}
