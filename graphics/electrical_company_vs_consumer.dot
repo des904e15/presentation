@@ -1,0 +1,14 @@
+digraph G {
+	root[label="Earn more money", shape=AND];
+	compromise_sm[label="Compromise SM", shape=OR];
+	alter_data[label="Alter the SM data", shape=OR];
+	bribe[label="Bribe SM-manufacturer"];
+	vulnerabilities[label="Vulnerabilities"];
+
+	alter_price[label="Price"];
+	alter_consumption[label="Consumption"];
+
+	root -> compromise_sm, alter_data;
+	compromise_sm -> bribe, vulnerabilities;
+	alter_data -> alter_price, alter_consumption;
+	}

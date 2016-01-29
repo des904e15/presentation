@@ -1,0 +1,36 @@
+digraph G {
+
+// graph[ center=true, margin=0.2, nodesep=0.1, ranksep=0.3];
+node[ shape=rectangle];
+
+root [label="Report a lower \npower consumption", shape=OR];
+complaint [label="File false complaint \nagainst electrical company",shape=AND];
+falsify [label="Falsify sent \nconsumption",shape=OR];
+
+
+
+
+//COMPLAINT SUBTREE
+root -> complaint;
+
+forgeConsumptionData[label="Change the \nconsumption data"];
+complaint -> forgeConsumptionData
+fileComplaint[label="File complaint \nagainst electrical company"]
+complaint -> fileComplaint
+
+
+//FALSIFY SUBTREE
+root -> falsify;
+
+package[label="Falsify consumption \npackages sent from SM"];
+falsify ->	package;
+reverseEngineer[label="Reverse engineer\nfirmware"];
+falsify -> reverseEngineer;
+ModifyFWstore[label="Modify how firmware \nstores consumption"];
+falsify -> ModifyFWstore;
+ModifyFWsend[label="Modify how firmware \nsends consumption"];
+falsify -> ModifyFWsend;
+
+
+
+}
