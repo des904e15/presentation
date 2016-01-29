@@ -1,29 +1,86 @@
 %!TEX root = ../presentation.tex
 
 %Fordele/ulemper ved attack trees
+
+\begin{frame}\frametitle{Attack Trees}
+  \begin{block}{Benefits}
+    \begin{itemize}
+      \item Provides a simple visual representation
+      \item Dependencies expressed through structure and logical gates
+      \begin{itemize}
+        \item Simplified on each node using sequential gates
+      \end{itemize}
+    \end{itemize}
+  \end{block}
+  \begin{block}{Missing flexibility}
+    \begin{itemize}
+      \item Certain dependencies are hard to represent
+      \item Complexity in node-relations is hard to represent
+      \item Difficult to represent relations between nodes
+    \end{itemize}
+  \end{block}
+\end{frame}
+
 %Subtræer der giver adgang til noget forskelligt (SM, ECM, physical)
 
-\begin{frame}\frametitle{title}
-  % Attack trees will describe the cause-effect relation between parts of an attack:
-  % I must do a before I do B.
-  % This describes the goal of the attack as well as any prerequisites for performing that specific attack.
-  % Problematic to represent the correlation between a cause and effect when intertwined
-\end{frame}
+% Attack trees will describe the cause-effect relation between parts of an attack:
+% I must do a before I do B.
+% This describes the goal of the attack as well as any prerequisites for performing that specific attack.
+% Problematic to represent the correlation between a cause and effect when intertwined
 
 %Genbrug af subtræer, referencer (?)
 
-\begin{frame}\frametitle{title}
-  % To solve the above (relation between cause and effect) subtrees could have been used.
-  % Subtrees could represent different groups of nodes, such as ways to gain access to the system or exploitations.
-  % The larger trees could then have been represented using combinations of these trees.
-  % This might have simplified the visual appearance of the large trees.
+% To solve the above (relation between cause and effect) subtrees could have been used.
+% Subtrees could represent different groups of nodes, such as ways to gain access to the system or exploitations.
+% The larger trees could then have been represented using combinations of these trees.
+% This might have simplified the visual appearance of the large trees.
+
+\begin{frame}\frametitle{Subtrees}
+  \begin{block}{Causes and effects}
+    \begin{itemize}
+      \item Many trees include similar cause-effect relations
+      \item Having multiple causes and effect complicates the structure
+      \begin{itemize}
+        \item If $A \rightarrow B$ and $C \rightarrow D$ it would be simpler to say $(A \vee C) \rightarrow (B \vee D)$
+      \end{itemize}
+      \item Trees are split on each cause-effect relation
+    \end{itemize}
+  \end{block}
+  \begin{block}{References}
+    \begin{itemize}
+      \item Each cause and effect represented using a tree
+      \item Relations identified by trees that link cause and effect
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 %Størrelse -- bliver meget hurtigt store
 %delebørn -- multiple parents
 
-\begin{frame}\frametitle{title}
-  % Besides representing the order between a nodes elements (A before B), it might also be nice to show how one element is related to multiple elements.
-  % In the current representation you are required to look for these relations, instead of having them appear visually.
-  % 
+% Besides representing the order between a nodes elements (A before B), it might also be nice to show how one element is related to multiple elements.
+% In the current representation you are required to look for these relations, instead of having them appear visually.
+% Most of the trees were also generated using multiple parents - which did not provide much of an overview.
+
+\begin{frame}\frametitle{Non-Trees}
+  \begin{block}{Common dependency}
+    \begin{itemize}
+      \item Two nodes might require the same preceding step
+      \begin{itemize}
+        \item One cause can have two effects
+      \end{itemize}
+      \item Cannot be represented as a tree (one parent per child)
+    \end{itemize}
+  \end{block}
+  \begin{block}{Graph representation}
+    \begin{itemize}
+      \item Joining multiple causes and effects into a single graph
+      \item Difficult to follow the relations
+      \item Does not clearly depict the threats when focusing on a single attack method
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}\frametitle{What's the point?}
+  Jeg synes ikke de her slides siger så meget om vores projekt.
+  De er nærmest bare en kritik af attack trees uden nogen form for konklusion/forslag til forbedring.
 \end{frame}
