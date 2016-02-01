@@ -19,6 +19,19 @@
   \end{block}
 \end{frame}
 
+\begin{frame}\frametitle{Attack Trees}
+\framesubtitle{Burglar using physical means}
+\centering
+\includegraphics[width=10cm]{graphics/burglarPhysical}
+\end{frame}
+
+\begin{frame}\frametitle{Burglar Attack Trees}
+\centering
+\includegraphics[width=11cm]{graphics/burglarClient}\\\vspace{0.5cm}
+\includegraphics[width=11cm]{graphics/burglarECM}\\\vspace{0.5cm}
+\includegraphics[width=11cm]{graphics/burglarSM}
+\end{frame}
+
 %Subtræer der giver adgang til noget forskelligt (SM, ECM, physical)
 
 % Attack trees will describe the cause-effect relation between parts of an attack:
@@ -74,6 +87,28 @@
       \item Joining multiple causes and effects into a single graph
       \item Difficult to follow the relations
       \item Does not clearly depict the threats when focusing on a single attack method
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Scoring Trees}
+  \begin{block}{Scoring parameters}
+    \begin{itemize}
+      \item Each element in a tree can be associated with a set of values
+      \item Scores are weighed relatively given their \emph{``importance''}
+      \item Scores can be associated with an attack or defense
+      \begin{itemize}
+        \item Cost (price in dollars) of hiring someone to carry out the task
+        \item Time to carry out the attack
+        \item Availability of countermeasures
+      \end{itemize}
+    \end{itemize}
+  \end{block}
+  \begin{block}{In this project}
+    \begin{itemize}
+      \item Not employed due to time-constraints
+      \item Focus of project was to map the possible attacks
+      \item Any future work on the attack trees could include scoring
     \end{itemize}
   \end{block}
 \end{frame}
